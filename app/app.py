@@ -22,7 +22,7 @@ st.set_page_config(page_title="Sales Forecasting System", layout="wide")
 
 @st.cache_data
 def load_and_process_data():
-    df = pd.read_csv('train.csv')
+    df = pd.read_csv('app/train.csv')
     df['Order Date'] = pd.to_datetime(df['Order Date'], dayfirst=True)
     df['Ship Date'] = pd.to_datetime(df['Ship Date'], dayfirst=True)
     df['Year'] = df['Order Date'].dt.year
